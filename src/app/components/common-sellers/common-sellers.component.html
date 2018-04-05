@@ -1,0 +1,28 @@
+<button (click)="getSellersOfRelease()">Get common sellers</button>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Release Names</th>
+      <th>Release IDs</th>
+      <th>Sellers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let match of matches">
+      <td>
+        <div *ngFor="let release of match.releases">
+          <div *ngFor="let rel of release">
+              <a href="https://www.discogs.com/sell/release/{{rel.id}}?ev=rb" target="_blank">{{rel.name}}</a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let seller of match.sellers">
+          {{seller}}
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+<button (click)="getRelease(7289206)">Get single release</button>
+<button (click)="getReleases()">Get multiple releases</button>
+<button (click)="getWantList()">Get want list</button>
+<button (click)="getWantListReleases()">Get want list releases</button>
+
+
+
+<div *ngFor="let release of releasesFromWants">
+  <div>{{release.artist}} - {{release.title}}</div>
+</div>

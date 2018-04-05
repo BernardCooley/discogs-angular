@@ -3,16 +3,27 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ReleasesListComponent } from './components/releases-list/releases-list.component';
+import { ReleasesService } from './services/releases/releases.service';
+import { HttpModule } from '@angular/http';
+import { CommonSellersComponent } from './components/common-sellers/common-sellers.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReleasesListComponent,
+    CommonSellersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    ReleasesService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
