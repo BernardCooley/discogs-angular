@@ -1,7 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-var Discogs = require('disconnect').Client;
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
 
@@ -12,9 +11,7 @@ export class ReleasesService {
   db;
   url = 'https://api.discogs.com';
 
-  constructor(private _http: Http) {
-    this.db = new Discogs().database();
-  }
+  constructor(private _http: Http) {}
 
   getRelease(releaseId): Observable<any> {
     return this._http.get(this.url + '/releases/' + releaseId);
